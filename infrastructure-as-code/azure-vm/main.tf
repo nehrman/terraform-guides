@@ -12,7 +12,7 @@ variable "windows_dns_prefix" {
 }
 
 variable "az_rg" {
-  description : "Resource Group name to use to deploy VMs"
+  description = "Resource Group name to use to deploy VMs"
 }
 
 variable "admin_password" {
