@@ -11,6 +11,8 @@ variable "windows_dns_prefix" {
   description = "DNS prefix to add to to public IP address for Windows VM"
 }
 
+variable "az_rg" {}
+
 variable "admin_password" {
   description = "admin password for Windows VM"
   default = "pTFE1234!"
@@ -20,7 +22,7 @@ module "windowsserver" {
   source              = "Azure/compute/azurerm"
   version             = "1.1.5"
   location            = "${var.location}"
-  resource_group_name = "${var.windows_dns_prefix}-rc"
+  resource_group_name = "${var.az_rg}"
   vm_hostname         = "pwc-ptfe"
   admin_password      = "${var.admin_password}"
   vm_os_simple        = "WindowsServer"
