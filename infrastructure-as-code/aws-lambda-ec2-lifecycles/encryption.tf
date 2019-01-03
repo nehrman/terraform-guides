@@ -28,5 +28,5 @@ data "template_file" "iam_decrypt_kms" {
 resource "aws_iam_role_policy" "decrypt_kms" {
 	name = "decrypt_kms"
 	policy = "${data.template_file.iam_decrypt_kms.rendered}"
-  role = "${aws_iam_role.lambda_notify_slack.id}"
+  role = "${aws_iam_role.lambda_notify.id}"
 }
